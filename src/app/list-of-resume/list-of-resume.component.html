@@ -1,0 +1,6 @@
+<button (click)="getResumes()">Afficher les articles résumés</button>
+<button (click)="clean()">Effacer les articles</button>
+<h1>Liste des résumés</h1>
+<ul *ngIf="listToShow">
+    <li *ngFor="let resume of listToShow">{{resume}}<br><br><br><br></li>
+</ul>
