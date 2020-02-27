@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { ListOfResumeComponent } from './list-of-resume/list-of-resume.component';
 
@@ -16,7 +15,7 @@ import { ListOfResumeComponent } from './list-of-resume/list-of-resume.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

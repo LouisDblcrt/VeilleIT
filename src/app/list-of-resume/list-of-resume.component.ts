@@ -19,6 +19,9 @@ export class ListOfResumeComponent implements OnInit {
   getResumes(): void {
     this.listToShow = this.resumeService.makeResume();
   }
+  getResumesTestAPI(){
+    this.resumeService.getResumesTestAPI();
+  }
 
   clean(): void {
     this.listToShow = [];

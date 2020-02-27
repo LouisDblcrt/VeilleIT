@@ -47,6 +47,15 @@ export class ResumeService {
     });
   }
 
+  getResumesTestAPI(){
+    this.listOfArticle.forEach(element => {
+      this.http
+        .post<any>(`https://api.meaningcloud.com/summarization-1.0?key=edf646c6a29ad3b17b49ccff7c04fb7a&url=${element.url}&sentences=10`,"")
+        .subscribe(data => {
+          this.listOfResume.push(data.summary);
+        });
+    });
+  }
   makeResume(): Array<string> {
     this.getUrls();
     this.getResumes()
