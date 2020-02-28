@@ -1,6 +1,8 @@
-<button (click)="getResumesTestAPI()">Afficher les articles résumés</button>
-<button (click)="clean()">Effacer les articles</button>
 <h1>Liste des résumés</h1>
 <ul *ngIf="listToShow">
-    <li *ngFor="let resume of listToShow">{{resume}}<br><br><br><br></li>
+    <span *ngFor="let resume of listToShow">
+    <h2>{{resume.titre}}</h2>
+    <h3>Retrouvez l'article original à cette <a href="{{resume.url}}" target="_blank">adresse</a></h3>
+    <li >{{resume.content}}<br><br><br><br></li>
+</span>
 </ul>

@@ -43,7 +43,7 @@ export class ResumeService {
       this.http
         .get<any>(`https://api.smmry.com?SM_API_KEY=${this.api_key}&SM_URL=${element.url}`)
         .subscribe(data => {
-          this.listOfResume.push(data.sm_api_content);
+          element.content=data.sm_api_content;
         });
     });
   }
@@ -62,7 +62,7 @@ export class ResumeService {
   }
 
   getResumeList() {
-    return this.listOfResume;
+    return this.listOfArticle;
   }
 
 }

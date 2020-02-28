@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeService } from 'src/services/resume.service';
+import { Article } from '../model/article';
 
 @Component({
   selector: 'app-list-of-resume',
@@ -8,7 +9,7 @@ import { ResumeService } from 'src/services/resume.service';
 })
 export class ListOfResumeComponent implements OnInit {
 
-  listToShow: Array<string>;
+  listToShow: Array<Article>;
 
   constructor(private resumeService: ResumeService) {}
 
@@ -28,9 +29,4 @@ export class ListOfResumeComponent implements OnInit {
   getResumesTestAPI(){
     this.resumeService.getResumesTestAPI();
   }
-
-  clean(): void {
-    this.listToShow = [];
-  }
-
 }
