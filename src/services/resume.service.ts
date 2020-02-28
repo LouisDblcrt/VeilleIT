@@ -25,7 +25,7 @@ export class ResumeService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    this.http
+    return this.http
       .get<any>(`https://getpocket.com/v3/get?consumer_key=${this.consumer_key}&access_token=${this.access_token}`, optionRequete)
       .subscribe(data => {
         var getValueArray = Object.values(data.list);
@@ -34,6 +34,7 @@ export class ResumeService {
           let article = new Article(element['resolved_title'], element['given_url']);
           this.listOfArticle.push(article);
         });
+        this.getResumes();
       });
   }
 
@@ -56,9 +57,11 @@ export class ResumeService {
         });
     });
   }
-  makeResume(): Array<string> {
+  makeResume() {
     this.getUrls();
-    this.getResumes()
+  }
+
+  getResumeList() {
     return this.listOfResume;
   }
 
