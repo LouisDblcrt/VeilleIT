@@ -1,8 +1,10 @@
-<h1>Liste des résumés</h1>
+<h2>Liste des résumés</h2>
+<body>
 <ul *ngIf="listToShow">
     <span *ngFor="let resume of listToShow">
-    <h2>{{resume.titre}}</h2>
-    <h3>Retrouvez l'article original à cette <a href="{{resume.url}}" target="_blank">adresse</a></h3>
+    <h3>{{resume.titre}}</h3>
+    <h4>Retrouvez l'article original à cette <a href="{{resume.url}}" target="_blank">adresse</a></h4>
     <li >{{resume.content}}<br><br><br><br></li>
 </span>
 </ul>
+</body>
