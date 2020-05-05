@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeService } from 'src/services/resume.service';
 import { Article } from '../model/article';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-list-of-resume',
@@ -10,11 +11,11 @@ import { Article } from '../model/article';
 export class ListOfResumeComponent implements OnInit {
 
   listToShow: Array<Article>;
-
+  name = new FormControl('');
   constructor(private resumeService: ResumeService) {}
 
   ngOnInit() {
-    this.getResumes();
+//    this.getResumes();
   }
 
   getResumes() {
@@ -28,5 +29,10 @@ export class ListOfResumeComponent implements OnInit {
 
   getResumesTestAPI(){
     this.resumeService.getResumesTestAPI();
+  }
+
+  addArticle(){
+    console.log(this.name.value);
+    this.resumeService.addArticle(this.name.value);
   }
 }
