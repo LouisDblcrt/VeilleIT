@@ -65,4 +65,8 @@ export class ResumeService {
     return this.listOfArticle;
   }
 
+  addArtcile(article: string) {
+    return this.http.post<any>('https://getpocket.com/v3/add', { url: article, consumer_key: this.consumer_key, access_token: this.access_token });
+  }
+
 }
