@@ -1,11 +1,11 @@
 <h2>Ajouter un article à getPocket et retrouver le résumé ici.</h2>
-<label>
-    URL du nouvel article:
+<div class="add-article">
+    <label>
+        URL du nouvel article : 
         <input type="text" [formControl]="name">
-        <p>
-            <button (click)="addArticle()">Add</button>
-          </p>
-          </label>
+        <button (click)="addArticle()">Ajouter</button>
+    </label>
+</div>
 <h2>Liste des résumés</h2>
 <body>
 <ul *ngIf="listToShow">

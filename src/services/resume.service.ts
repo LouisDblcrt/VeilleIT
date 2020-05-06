@@ -69,4 +69,10 @@ export class ResumeService {
     return this.http.post<any>('https://getpocket.com/v3/add', { url: article, consumer_key: this.consumer_key, access_token: this.access_token }).subscribe();
   }
 
+  reset() {
+    this.listOfUrl = [];
+    this.listOfResume = [];
+    this.listOfArticle = [];
+  }
+
 }

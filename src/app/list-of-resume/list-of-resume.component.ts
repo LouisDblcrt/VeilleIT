@@ -32,10 +32,14 @@ export class ListOfResumeComponent implements OnInit {
   }
 
   addArticle(){
-    this.resumeService.addArticle(this.name.value);
-    this.name.reset();
-    this.listToShow=[];
-    this.getResumes();
-    
+    if (this.name.value === "") {
+      alert("Veuillez entrer une URL")
+    } else {
+      this.resumeService.addArticle(this.name.value);
+      this.name.reset();
+      this.resumeService.reset()
+      this.listToShow=[];
+      this.getResumes();
+    }
   }
 }
