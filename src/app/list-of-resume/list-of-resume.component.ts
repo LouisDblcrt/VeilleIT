@@ -15,7 +15,7 @@ export class ListOfResumeComponent implements OnInit {
   constructor(private resumeService: ResumeService) {}
 
   ngOnInit() {
-//    this.getResumes();
+    this.getResumes();
   }
 
   getResumes() {
@@ -32,7 +32,10 @@ export class ListOfResumeComponent implements OnInit {
   }
 
   addArticle(){
-    console.log(this.name.value);
     this.resumeService.addArticle(this.name.value);
+    this.name.reset();
+    this.listToShow=[];
+    this.getResumes();
+    
   }
 }
